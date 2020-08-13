@@ -8,6 +8,7 @@ module.exports = (pathPrefix = 'src') => {
         { key: 'Store', value: '/redux/store' },
 
         // Other
+        { key: 'Api', value: '/api' },
         { key: 'Components', value: '/components' },
         { key: 'Utils', value: '/utils' },
     ];
