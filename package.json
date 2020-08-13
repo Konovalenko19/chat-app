@@ -1,0 +1,32 @@
+{
+  "name": "chat-app",
+  "version": "1.0.0",
+  "description": "React chat app",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server",
+    "build": "cross-env NODE_ENV=production webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Konovalenko19/chat-app.git"
+  },
+  "keywords": [
+    "js",
+    "react",
+    "chat"
+  ],
+  "author": "Vladimir Konovalenko <konovalenko.vowa@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Konovalenko19/chat-app/issues"
+  },
+  "homepage": "https://github.com/Konovalenko19/chat-app#readme",
+  "devDependencies": {
+    "chalk": "^4.1.0",
+    "cross-env": "^7.0.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
