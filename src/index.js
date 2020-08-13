@@ -1,4 +1,10 @@
-import sum from './test';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-console.log('App is working!');
-console.log(sum(4, 20));
+import './index.css';
+
+const App = () => (
+    <div>My first react-webpack app 1!</div>
+);
+
+ReactDOM.render(<App/>, document.getElementById('root'));
