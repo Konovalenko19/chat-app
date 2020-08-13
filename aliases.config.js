@@ -1,5 +1,3 @@
-const path = require('path');
-
 module.exports = (pathPrefix = 'src') => {
     const list = [
         // Redux
