@@ -27,6 +27,7 @@ const config = {
         port: PORT,
         hot: true,
         open: true,
+        historyApiFallback: true,
     },
     resolve: {
         extensions: ['.js', '.jsx'],
