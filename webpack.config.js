@@ -7,7 +7,7 @@ const pathSrc = path.resolve(__dirname, 'src');
 const pathDist = path.resolve(__dirname, 'dist');
 const isProd = ENV === 'production';
 
-const aliases = require('./aliases.config')();
+const aliases = require('./webpack.aliases')();
 const plugins = require('./webpack.plugins')(isProd);
 
 console.log(chalk.bold.magenta(`WEBPACK MODE: ${ENV}\n`));
@@ -52,8 +52,8 @@ const config = {
                 use: [
                     'style-loader',
                     'css-loader',
-                ]
-            }
+                ],
+            },
         ],
     },
 };

@@ -55,10 +55,12 @@
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@babel/runtime-corejs3": "^7.11.2",
+    "axios": "^0.19.2",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
     "styled-components": "^5.1.1"
   }

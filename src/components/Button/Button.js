@@ -18,10 +18,12 @@ const Button = ({
     type,
     isDisabled,
     children,
+    ...other
 }) => (
     <S.ButtonWrapper
         type={type}
         disabled={isDisabled}
+        {...other}
     >
         {children}
     </S.ButtonWrapper>
