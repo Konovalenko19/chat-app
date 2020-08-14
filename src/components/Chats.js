@@ -8,7 +8,9 @@ const Chats = (props) => (
                 localStorage.removeItem('token');
                 props.history.push('/login');
             }}
-        >Log out</button>
+        >
+            Log out
+        </button>
     </div>
 );
 

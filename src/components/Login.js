@@ -19,7 +19,7 @@ class Login extends Component {
     handleSubmit = event => {
         event.preventDefault();
         UserAPI.login(this.state).then(data => {
-            localStorage.setItem('token', data.data.jwt);
+            localStorage.setItem('token', data.jwt);
             this.props.history.push('/');
         });
     }
