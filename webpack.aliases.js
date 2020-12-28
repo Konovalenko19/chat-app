@@ -1,18 +1,18 @@
-module.exports = (pathPrefix = 'src') => {
-    const list = [
-        // Redux
-        { key: 'Actions', value: '/redux/actions' },
-        { key: 'Reducers', value: '/redux/reducers' },
-        { key: 'Store', value: '/redux/store' },
+module.exports = (pathPrefix = "src") => {
+  const list = [
+    // Redux
+    { key: "actions", value: "/redux/actions" },
+    { key: "reducers", value: "/redux/reducers" },
+    { key: "store", value: "/redux/store" },
 
-        // Other
-        { key: 'Api', value: '/api' },
-        { key: 'Components', value: '/components' },
-        { key: 'Utils', value: '/utils' },
-    ];
+    // Other
+    { key: "api", value: "/api" },
+    { key: "components", value: "/components" },
+    { key: "utils", value: "/utils" },
+  ];
 
-    return list.map(alias => ({
-        ...alias,
-        value:  `${pathPrefix}${alias.value}`,
-    }));
+  return list.map((alias) => ({
+    ...alias,
+    value: `${pathPrefix}${alias.value}`,
+  }));
 };

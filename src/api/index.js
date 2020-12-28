@@ -1,5 +1,3 @@
-import * as UserAPI from './user';
+import * as UserService from "./user";
 
-export {
-    UserAPI,
-}
+export { UserService };

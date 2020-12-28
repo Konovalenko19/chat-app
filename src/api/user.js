@@ -1,27 +1,23 @@
-import { get, post, handleError } from 'Utils/http';
+import { get, post, handleError } from "utils/requests";
 
-export const getProfile = (token) => get({
-    url: '/user/profile',
-    headers: {
-        'Authorization': `Bearer ${token}`,
-    },
-}).then(
-    (response) => response.data,
-    handleError
-);
+export const checkAuth = () =>
+  get({
+    url: "/user/checkAuth",
+  }).then((response) => response.data, handleError);
 
-export const login = ({ login, password }) => post({
-    url: '/user/login',
-    params: { login, password },
-}).then(
-    (response) => response.data,
-    handleError
-);
+export const getProfile = (token) =>
+  get({
+    url: "/user/profile",
+  }).then((response) => response.data, handleError);
 
-export const signup = ({ login, password, avatar }) => post({
-    url: '/user/signup',
-    params: { login, password, avatar },
-}).then(
-    (response) => response.data,
-    handleError
-);
+export const login = ({ email, password }) =>
+  post({
+    url: "/user/login",
+    data: { email, password },
+  }).then((response) => response.data, handleError);
+
+export const signup = ({ email, name, password }) =>
+  post({
+    url: "/user/signup",
+    data: { email, name, password },
+  }).then((response) => response.data, handleError);

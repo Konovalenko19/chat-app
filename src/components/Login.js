@@ -1,65 +1,60 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import styled from "styled-components";
 
-import { UserAPI } from 'Api';
+import { UserService } from "api";
 
-import Button from 'Components/Button';
+import Button from "components/Button";
+import Input from "components/Input";
+
+const BigButton = styled(Button)`
+  width: 100%;
+  padding: 15px;
+`;
 
 class Login extends Component {
-    state = {
-        login: '',
-        password: ''
-    }
-  
-    handleChange = event => {
-        this.setState({
-            [event.target.name]: event.target.value
-        });
-    }
-  
-    handleSubmit = event => {
-        event.preventDefault();
-        UserAPI.login(this.state).then(data => {
-            localStorage.setItem('token', data.jwt);
-            this.props.history.push('/');
-        });
-    }
-  
-    render() {
-        return (
-            <form onSubmit={this.handleSubmit}>
-                <h1>Auth</h1>
+  state = {
+    email: "",
+    password: "",
+  };
 
-                <label>
-                    <fieldset>
-                        <legend>Login</legend>
-                        <input
-                            style={{ width: '100%', boxSizing: 'border-box' }}
-                            name='login'
-                            placeholder='Login'
-                            value={this.state.login}
-                            onChange={this.handleChange}
-                        />
-                    </fieldset>
-                </label>
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
 
-                <label>
-                    <fieldset>
-                        <legend>Password</legend>
-                        <input
-                            style={{ width: '100%', boxSizing: 'border-box' }}
-                            type='password'
-                            name='password'
-                            placeholder='Password'
-                            value={this.state.password}
-                            onChange={this.handleChange}
-                        />
-                    </fieldset>
-                </label>
+  handleSubmit = (e) => {
+    e.preventDefault();
+    UserService.login(this.state).then((data) => {
+      localStorage.setItem("token", data.token);
+      this.props.history.push("/");
+    });
+  };
 
-                <Button type='submit'>Отправить</Button>
-            </form>
-        )
-    }
-};
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <h1>Auth</h1>
+
+        <Input
+          name="email"
+          label="Email"
+          value={this.state.email}
+          onChange={this.handleChange}
+        />
+
+        <Input
+          type="password"
+          name="password"
+          label="Password"
+          value={this.state.password}
+          onChange={this.handleChange}
+        />
+
+        <BigButton type="submit">Отправить</BigButton>
+      </form>
+    );
+  }
+}
 
 export default Login;
